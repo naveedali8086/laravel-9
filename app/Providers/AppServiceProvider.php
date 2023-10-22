@@ -6,7 +6,7 @@ use App\Utilities\Contracts\ElasticsearchHelperInterface;
 use App\Utilities\Contracts\RedisHelperInterface;
 use App\Utilities\ElasticsearchHelper\StoreEmail;
 use App\Utilities\RedisHelper\CacheEmail;
-use Elasticsearch\ClientBuilder;
+use Elastic\Elasticsearch\ClientBuilder;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider

@@ -26,3 +26,51 @@ You can now clone your laravel-9 repository on your machine (in my case in the c
 
 cd ~/code
 git clone git@github.com:<your_username>/laravel-9.git
+
+---
+## Coding task: 
+Send multiple emails asynchronously over an API in Laravel
+
+### Overview
+
+- Create an API that can send multiple emails asynchronously to specific users.
+- Store information about the email in Elasticsearch
+- Cache information about the email in Redis
+- Test the route
+
+ Note: Bonus requirements were also implemented
+
+### Points to be noted before running this sample
+1. "composer install" need to be run
+
+
+2. .env file needs to be added and updated with DB and MAIL related environment variables
+
+
+3. 'predis' client was used in this demo instead of default 'phpredis'.
+   If you intend to use default redis client make sure to comment out 'Redis' alias in config/app.php (otherwise it will conflict with redis clients class)
+
+
+4. An 'api' guard (that uses 'token' driver) has been added in config/auth.php
+   and the token is used as a URI parameter in the request api_token={{your_api_token}}
+
+
+5. In phpunit tests 'mysql' database has been used
+
+
+6. Because horizon has been used so following commands needs to be run because horizon related assets and service provider has not been committed
+
+   
+       php artisan horizon:install
+
+7. Following artisan commands need to be run:
+
+        php artisan migrate
+        php artisan db:seed (creates one user for testing in postman or some other client)
+        php artisan horizon
+        php artisan queue:work
+
+8. One command 'test' has been added in composer.json to run the test cases
+
+       php artisan test
+

@@ -3,7 +3,7 @@
 namespace App\Utilities\ElasticsearchHelper;
 
 use App\Utilities\Contracts\ElasticsearchHelperInterface;
-use Elasticsearch\Client;
+use Elastic\Elasticsearch\Client;
 
 class StoreEmail implements ElasticsearchHelperInterface
 {
